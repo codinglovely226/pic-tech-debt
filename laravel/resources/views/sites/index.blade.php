@@ -1,0 +1,71 @@
+@extends('layouts.crud-master')
+@section('content')
+    <div class="row justify-content-center">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-header">
+                    {!! $title !!}
+                    <div class="float-right">
+                        @if (in_array('add', $permissions))
+                            <a href="/settings/'{!! Illuminate\Support\Str::snake($model_name.'s') !!}/create" class="btn btn-xs btn-warning">Add New</a>
+                        @endif
+                    </div>
+                </div>
+
+                <div class="card-body">
+                    @if (isset($data) && count($data) > 0)
+                        <div class="table-responsive">
+                            <table class="table table-hover table-striped">
+                                <thead>
+                                <tr>
+                                    <th>Sl</th>
+                                    @foreach($columns_visible as $column)
+                                        <th>{!! Illuminate\Support\Str::title(str_replace('_', ' ', $column)) !!}</th>
+                                    @endforeach
+                                    @if (in_array('edit', $permissions) || in_array('delete', $permissions) || in_array('view', $permissions))
+                                        <th>Action</th>
+                                    @endif
+                                </tr>
+                                </thead>
+                                <tbody>
+                                @php($serial = $data->perPage() * ($data->currentPage() - 1))
+                                @foreach($data as $data_item)
+                                    <tr>
+                                        <td>{!! ++$serial !!}</td>
+                                        @foreach($columns_visible as $column)
+                                            <td>{!! $data_item->$column !!}</td>
+                                        @endforeach
+                                        @if (in_array('edit', $permissions) || in_array('delete', $permissions) || in_array('view', $permissions))
+                                            <td>
+                                                <div class="btn-group">
+                                                    @if (in_array('view', $permissions))
+                                                        <a href="/settings/{!! Illuminate\Support\Str::snake($model_name.'s') !!}/{!! $data_item->id !!}" class="btn btn-xs btn-info">VIEW</a>
+                                                    @endif
+                                                    @if (in_array('edit', $permissions))
+                                                        <a href="/settings/{!! Illuminate\Support\Str::snake($model_name.'s') !!}/{!! $data_item->id !!}/edit" class="btn btn-xs btn-warning">EDIT</a>
+                                                    @endif
+                                                    @if (in_array('delete', $permissions))
+                                                        {!! Form::submit('Delete', array('class'=>'btn btn-danger  btn-sm','onclick' => 'return confirm("Are you sure want to Delete?");'))!!}
+                                                        {!! Form::close()!!}
+                                                    @endif
+                                                </div>
+                                            </td>
+                                        @endif
+                                    </tr>
+                                @endforeach
+                                </tbody>
+                            </table>
+                        </div>
+                        {!! $data->links() !!}
+                    @else
+                        <div class="alert alert-info">No data found</div>
+                    @endif
+                </div>
+            </div>
+        </div>
+    </div>
+    @endsection
+
+    @push('script')
+
+    @endpush

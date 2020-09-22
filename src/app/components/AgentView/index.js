@@ -74,9 +74,9 @@ export class AgentView extends React.Component {
   constructor(props) {
     super(props);
 
-    this.createCentreAgentNameEditField = this.createCentreAgentNameEditField.bind(this);
-    this.createCentreAgentNameInsertField = this.createCentreAgentNameInsertField.bind(this);
-    this.onUseTypeChange = this.onUseTypeChange.bind(this);
+    this.createCentreAgentNameEditField = () => {};
+    this.createCentreAgentNameInsertField = () => {};
+    this.onUseTypeChange = () => {};
 
     this.state = {
       isEUPCSLoading: false,

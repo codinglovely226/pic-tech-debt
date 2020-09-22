@@ -75,7 +75,7 @@ export class CaseContextMenu extends React.Component {
   constructor(props) {
     super(props);
 
-    this.getIncidentMenu = this.getIncidentMenu.bind(this);
+    this.getIncidentMenu = () => {};
   }
 
   getIncidentContextMenu() {

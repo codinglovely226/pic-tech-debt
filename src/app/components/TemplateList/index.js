@@ -68,7 +68,7 @@ class TemplateList extends React.Component {
   constructor(props) {
     super(props);
 
-    this.handleSelectChange = this.handleSelectChange.bind(this);
+    this.handleSelectChange = () => {};
 
     this.state = {
       selected: [props.currentTemplateId],

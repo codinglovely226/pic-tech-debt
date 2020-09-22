@@ -38,8 +38,8 @@ export class IncidentModal extends React.Component {
   constructor(props) {
     super(props);
 
-    this.loadMore = this.loadMore.bind(this);
-    this.handleTabSelect = this.handleTabSelect.bind(this);
+    this.loadMore = () => {};
+    this.handleTabSelect = () => {};
 
     this.state = {
       scrollKey: moment().format('x'),

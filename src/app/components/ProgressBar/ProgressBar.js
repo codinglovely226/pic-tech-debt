@@ -19,8 +19,8 @@ class ProgressBar extends React.Component {
 
   constructor(props) {
     super(props);
-    this.handleProps = this.handleProps.bind(this);
-    this.increment = this.increment.bind(this);
+    this.handleProps = () => {};
+    this.increment = () => {};
     this.state = {
       percent: props.percent,
     };

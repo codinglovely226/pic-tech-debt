@@ -31,7 +31,7 @@ class InvestigationsView extends React.Component {
   constructor(props) {
     super(props);
 
-    this._buildAttachments = buildAttachments.bind(this);
+    this._buildAttachments = () => {};
 
     this.state = {
       attachments: {},

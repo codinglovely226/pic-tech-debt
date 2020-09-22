@@ -34,10 +34,10 @@ export class ActionBar extends React.Component {
   constructor(props) {
     super(props);
 
-    this.handleBeforeUnload = this.handleBeforeUnload.bind(this);
-    this.handleUnload = this.handleUnload.bind(this);
-    this.getTemplatesMenu = this.getTemplatesMenu.bind(this);
-    this.toggleUiMode = this.toggleUiMode.bind(this);
+    this.handleBeforeUnload = () => {};
+    this.handleUnload = () => {};
+    this.getTemplatesMenu = () => {};
+    this.toggleUiMode = () => {};
 
     this.state = {
       modalMode: 'search',

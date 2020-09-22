@@ -12,7 +12,7 @@ function withProgressBar(WrappedComponent) {
         progress: -1,
         loadedRoutes: props.history && [props.history.location.pathname],
       };
-      this.updateProgress = this.updateProgress.bind(this);
+      this.updateProgress = () => {};
     }
 
     componentWillMount() {

@@ -81,8 +81,8 @@ export class QuickView extends React.Component {
   constructor(props) {
     super(props);
 
-    this.updatePatientLocalityFromCaller = this.updatePatientLocalityFromCaller.bind(this);
-    this.updatePatientLocalityFromLookup = this.updatePatientLocalityFromLookup.bind(this);
+    this.updatePatientLocalityFromCaller = () => {};
+    this.updatePatientLocalityFromLookup = () => {};
   }
 
   buildFeatureList() {

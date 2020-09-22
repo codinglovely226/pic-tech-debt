@@ -26,7 +26,7 @@ export class ModalList extends React.Component {
   constructor(props) {
     super(props);
 
-    this.loadMore = this.loadMore.bind(this);
+    this.loadMore = () => {};
 
     this.state = {
       scrollKey: moment().format('x'),

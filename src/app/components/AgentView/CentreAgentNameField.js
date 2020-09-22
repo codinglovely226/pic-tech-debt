@@ -18,8 +18,8 @@ export class CentreAgentNameField extends React.Component {
   constructor(props) {
     super(props);
 
-    this.updateState = this.updateState.bind(this);
-    this.updateData = this.updateData.bind(this);
+    this.updateState = () => {};
+    this.updateData = () => {};
 
     this.state = {
       name: props.defaultValue,

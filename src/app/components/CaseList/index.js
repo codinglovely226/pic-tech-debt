@@ -25,9 +25,9 @@ export class CaseList extends React.Component {
   constructor(props) {
     super(props);
 
-    this.loadMore = this.loadMore.bind(this);
-    this.handleSelectChange = this.handleSelectChange.bind(this);
-    this.handleIncidentClick = this.handleIncidentClick.bind(this);
+    this.loadMore = () => {};
+    this.handleSelectChange = () => {};
+    this.handleIncidentClick = () => {};
 
     this.state = {
       scrollKey: moment().format('x'),

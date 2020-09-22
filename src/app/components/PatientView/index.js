@@ -51,8 +51,8 @@ export class PatientView extends React.Component {
   constructor(props) {
     super(props);
 
-    this.updateLocalityFromCaller = this.updateLocalityFromCaller.bind(this);
-    this.updateLocalityFromLookup = this.updateLocalityFromLookup.bind(this);
+    this.updateLocalityFromCaller = () => {};
+    this.updateLocalityFromLookup = () => {};
   }
 
   updateLocalityFromCaller() {

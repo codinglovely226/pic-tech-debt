@@ -64,8 +64,8 @@ export class OverviewView extends React.Component {
   constructor(props) {
     super(props);
 
-    this._buildAttachments = buildAttachments.bind(this);
-    this._printFile = this.printFile.bind(this);
+    this._buildAttachments = () => {};
+    this._printFile = () => {};
 
     this.state = {
       attachments: {},

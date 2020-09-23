@@ -6,11 +6,14 @@
 const path = require('path');
 const webpack = require('webpack');
 const dotenv = require('dotenv');
+//const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
+//const TerserPlugin = require('terser-webpack-plugin');
 
 const env = {
   NODE_ENV: JSON.stringify(process.env.NODE_ENV),
   REACT_APP_VERSION: JSON.stringify(process.env.REACT_APP_VERSION),
 };
+const isDev = env === 'development';
 const envConfig = dotenv.config({ path: `./.env.${process.env.NODE_ENV}` }).parsed;
 for (const k in envConfig) {
   env[k] = envConfig[k];
@@ -23,7 +26,7 @@ module.exports = (options) => ({
     publicPath: '/',
   }, options.output), // Merge with env dependent settings
   module: {
-    loaders: [{
+    rules: [{
       test: /\.js$/, // Transform all .js files required somewhere with Babel
       loader: 'babel-loader',
       include: /(app|internals|server)/,
@@ -36,7 +39,14 @@ module.exports = (options) => ({
       // So, no need for ExtractTextPlugin here.
       test: /\.css$/,
       include: /node_modules/,
-      loaders: ['style-loader', 'css-loader'],
+      use: [
+        {
+          loader: "style-loader"
+        },
+        {
+          loader: "css-loader"
+        }
+      ],
     }, {
       test: /\.svg(\?v=\d+\.\d+\.\d+)?$/,
       loader: 'url-loader?limit=10000&mimetype=image/svg+xml',
@@ -64,9 +74,6 @@ module.exports = (options) => ({
       test: /\.html$/,
       loader: 'html-loader',
     }, {
-      test: /\.json$/,
-      loader: 'json-loader',
-    }, {
       test: /\.(mp4|webm)$/,
       loader: 'url-loader',
       query: {
@@ -83,12 +90,15 @@ module.exports = (options) => ({
     // Always expose NODE_ENV to webpack, in order to use `process.env.NODE_ENV`
     // inside your code for any environment checks; UglifyJS will automatically
     // drop any unreachable code.
+    // webpack 4
+    /*
     new webpack.DefinePlugin({
       'process.env': env,
-    }),
-    new webpack.NamedModulesPlugin(),
+    })
+,    */
     new webpack.IgnorePlugin(/^\.\/lang$/, /moment$/),
   ]),
+
   resolve: {
     modules: ['app', 'node_modules'],
     extensions: [

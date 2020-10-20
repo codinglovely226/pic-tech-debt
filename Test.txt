@@ -1,15 +1,6 @@
 THis is test
-
-
-<<<<<<< HEAD
-
-
-
-
-
-
-this is on local1
-
-=======
-This is on git
->>>>>>> 2266a922369e92f10a6cb03584cd6bfe8fb29348
+this is on git
+this is on git
+this is on git
+this is on git
+this is on git

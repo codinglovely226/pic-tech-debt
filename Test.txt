@@ -1,0 +1,7 @@
+THis is test
+
+<<<<<<< HEAD
+This is third test
+=======
+This is another update
+>>>>>>> b7a5bebc48562803e114fc21800fa9f66b2bbf10

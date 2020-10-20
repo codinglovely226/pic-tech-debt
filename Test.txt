@@ -1,29 +1,4 @@
 THis is test
 
-<<<<<<< HEAD
-This is third test
-=======
-This is another update
->>>>>>> b7a5bebc48562803e114fc21800fa9f66b2bbf10
 
-<<<<<<< HEAD
-
-
-
-
-
-
-
-
-
-this is on local1
-=======
-<<<<<<< HEAD
-
-
-
-this is on local
-=======
-this is on git
->>>>>>> 23c68ecbb1752806f48d31ceffdc049d8b5be84c
->>>>>>> 2c4844ab22a1af706ea8a87ab02c265fc276d471
+This is on git

@@ -1,5 +1,7 @@
 # Development Setup
 
+This is test
+
 ## Local Application Development (Laravel & SPA)
 Follow Laravel Homestead setup instructions (https://laravel.com/docs/5.7/homestead)
 

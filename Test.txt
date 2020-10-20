@@ -6,7 +6,11 @@ This is third test
 This is another update
 >>>>>>> b7a5bebc48562803e114fc21800fa9f66b2bbf10
 
+<<<<<<< HEAD
 
 
 
 this is on local
+=======
+this is on git
+>>>>>>> 23c68ecbb1752806f48d31ceffdc049d8b5be84c
